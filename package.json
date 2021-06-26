@@ -1,0 +1,47 @@
+{
+  "name": "insidesk-restful-api",
+  "version": "0.0.1",
+  "description": "A RESTful API using Node.js, Express, and MongoDB | insidesk",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.2.6",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "mongoose": "^5.12.15",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pariskwsto/insidesk-restful-api.git"
+  },
+  "keywords": [
+    "rest",
+    "restful",
+    "api",
+    "nodejs",
+    "express",
+    "jwt",
+    "mongodb"
+  ],
+  "author": "Paris Kostopoulos <pariskwsto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pariskwsto/insidesk-restful-api/issues"
+  },
+  "homepage": "https://github.com/pariskwsto/insidesk-restful-api#readme"
+}
