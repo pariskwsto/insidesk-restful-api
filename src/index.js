@@ -20,6 +20,9 @@ const xss = require('xss-clean');
 const config = require('./config');
 const port = config.port;
 
+// middlewares
+const errorHandler = require('./middleware/errorHandler');
+
 // db connection
 const connectDB = require('./config/db');
 connectDB();
@@ -57,6 +60,8 @@ app.use(hpp());
 if (process.env.NODE_ENV === 'development') {
   app.use('/status', require('./routes/server-status'));
 }
+
+app.use(errorHandler);
 
 const server = app.listen(port, () => {
   console.log(`NODE_ENV: ${process.env.NODE_ENV}`.yellow);
