@@ -61,6 +61,8 @@ if (process.env.NODE_ENV === 'development') {
   app.use('/status', require('./routes/server-status'));
 }
 
+app.use('/v1', require('./routes/v1'));
+
 app.use(errorHandler);
 
 const server = app.listen(port, () => {
