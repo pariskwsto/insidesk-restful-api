@@ -20,7 +20,7 @@ const xss = require('xss-clean');
 const config = require('./config');
 const port = config.port;
 
-// middlewares
+// middleware
 const errorHandler = require('./middleware/errorHandler');
 
 // db connection

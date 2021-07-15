@@ -4,18 +4,17 @@ const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
-  // log to console for dev
   // console.log(err.stack.red);
   // console.log(err.name);
   // console.log('Error from handler ===>', err);
 
   // mongoose bad object id
   if (err.name === 'CastError') {
-    const errValue =
+    const errMsg =
       !!err.value && typeof err.value === 'string'
         ? ` with id of ${err.value}`
         : '';
-    const message = `Resource not found${errValue}`;
+    const message = `Resource not found${errMsg}`;
     error = new ErrorResponse(message, 404);
   }
 
