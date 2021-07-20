@@ -10,23 +10,22 @@ const {
 } = require('../../controllers/foodInfo');
 
 const advancedResults = require('../../middleware/advancedResults');
+const { protect } = require('../../middleware/auth');
 const FoodInfo = require('../../models/FoodInfo');
 
 const router = express.Router();
 
-// TODO review access
-
-router.route('/barcode/:barcode').get(searchFoodInfoByBarcode);
+router.route('/barcode/:barcode').get(protect, searchFoodInfoByBarcode);
 
 router
   .route('/')
-  .get(advancedResults(FoodInfo), getAllFoodInfo)
-  .post(createFoodInfo);
+  .get(protect, advancedResults(FoodInfo), getAllFoodInfo)
+  .post(protect, createFoodInfo);
 
 router
   .route('/:id')
-  .get(getSingleFoodInfo)
-  .put(updateFoodInfo)
-  .delete(deleteFoodInfo);
+  .get(protect, getSingleFoodInfo)
+  .put(protect, updateFoodInfo)
+  .delete(protect, deleteFoodInfo);
 
 module.exports = router;

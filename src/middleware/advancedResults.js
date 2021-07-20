@@ -4,6 +4,10 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   // copy req.query
   const reqQuery = { ...req.query };
 
+  if (req.user?.id) {
+    reqQuery.user = req.user.id;
+  }
+
   // fields to exclude
   const removeFields = ['select', 'sort', 'page', 'limit'];
 
